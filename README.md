@@ -1,16 +1,36 @@
-# ConvertKit
+# Headline
 
-## Convert video, audio or images to other formats or compress or simple adjustments like rotate one or more files.
+## Headline 2
 
-Convert video files (every video file that ffmpeg supports) to the following: MP4, AVI, MOV, WMV, MKV, M2V, OGG, FLV (or extract audio to the following formats WAV or MP3)
-Convert audio files (every audio file that ffmpeg supports) to the following: MP3, WAV, FLAC, WMA or OGA
-Convert images from various raw or normal formats to JPEG, PNG, TIFF, BMP, GIF, ICO.
-You can also rotate video and image files. 
+jejeje
 
-ConvertKit uses "ffmpeg-2023-06-16" and "ImageMagick-6.8.9-8", they are included in this installer.
+## Headline 3
 
-"How to" guide
+Youjhejeje
 
-![Help1](https://i.imgur.com/q40daiz.jpg)
+Credit to [cduff](https://community.spiceworks.com/people/craigduff) at [spiceworks.com](https://community.spiceworks.com/topic/1869414-find-date-in-a-file-name-and-split-it-off) (I used some of his code)
 
-![Help2](https://i.imgur.com/paXJlHJ.jpeg)
+...
+
+After you jkfsdl
+This command wilfklsdøfk
+```
+exift joda jeje
+```
+jeje
+```
+jofejklj
+```
+
+
+## Powershell:  "get date from various filenames.ps1"
+
+
+Youfsdf the script).
+
+Here is a list of filenames that I tested on and it fould all the names containing the dates!
+```
+2ID_20210704_104414.mp4
+VID_20210704_105134.mp4
+```
+33000 files takes about 60 minutes to run.
