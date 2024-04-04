@@ -139,7 +139,7 @@ sudo chown -R myusername:myusername /srv
 <br/>
 <p></p>
 
-## Setup your external domain, a free no-ip.org will work fine (5 minutes)
+## SETUP your external domain, this guide is for no-ip.org since it's free (5 minutes)
 Go to www.no-ip.org
 - Create a new user, or login to your existing one
 - Click "Dynamic DNS"
@@ -150,7 +150,7 @@ Go to www.no-ip.org
 - Make sure "DNS Host (A)" is selected
 - Fill in your EXTERNAL IP (no-ip will display it in the textbox as background, so just read it, then type it back in)
 
-## Setup your router port forwarding (5 minutes)
+## SETUP your router port forwarding (5 minutes)
 This guide is only for the router i use, but it should be a similar process for you.
 Go to 192.168.1.1 (this is usually the ip for your router)
 - I Login
@@ -247,7 +247,7 @@ EXTRA information: Let's encrypt can issue 5 SSL certificates within the same co
 <br/>
 <p></p>
 
-INSTALL immich on PORTAINER (10 minutes):
+## INSTALL immich on PORTAINER (10 minutes):
 Pre-information:
 I have added /media/tor/ex4TB/immich/external:/media/tor/ex4TB/immich/external as volumes as I used it for a while, but soon found out that it's a lot better to add bulk pictures and video using CLI command API.
 I decided to leave the two volume entries in this setup as you might want to use it. I recommend using CLI. (replace tor and ex4TB with your names)
@@ -332,9 +332,14 @@ REDIS_HOSTNAME=immich_redis
 - Click "Simple mode" (to switch back, optional)
 - Click "Deploy the stack"
 
-In Immich web: 192.168.1.111:2283
+### Go to Immich web: 192.168.1.111:2283
 
-Set up new user
+- Set up new user
+- Login
+
+OPTIONAL Setup External Library
+Remeber, External Library is for viewing ONLY, you cannot delete files (even in the graphical userface)
+I like immich-cli command for importing better, this gives full control of the imported files.
 - Click "Administration"
 - Click "External Library"
 - Click "Create Library"
@@ -344,15 +349,10 @@ Set up new user
 - Fill in "/media/tor/ex4TB/immich/external"
 - Click "Save"
 
-Additional information:
--Samba:
-Since you have enabled Samba share, you can take a backup of all your photos/videos at this location:
-\\192.168.1.111\immich
-So if you have a server you can easily create a sync job to take a backup this way.
 
--Powershell:
-* Install [Node.JS bundled with NPM](https://nodejs.org/en/download), download and run the setup.
-* Install the new [@immich-cli] in powershell
+OPTIONAL Installing immich-cli in Powershell:
+- Install [Node.JS bundled with NPM](https://nodejs.org/en/download), download and run the setup.
+- Install the new @immich-cli in powershell
 ```
 npm i -g @immich/cli
 ```
