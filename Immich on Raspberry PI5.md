@@ -15,7 +15,6 @@ Important with 5V AND 5A or else your system will be unstable!
 - [M.2 to USB device](https://www.aliexpress.com/item/1005001524803408.html?spm=a2g0o.order_list.order_list_main.51.54721802hr2nsZ)
 - Micro SD card
 
-The whole installation process should take about 30 minutes.
 <br/>
 <br/>
 <p></p>
@@ -134,7 +133,7 @@ sudo chown -R myusername:myusername /srv
 ```
 
 ...
-## INSTALL nginex-proxy-manager on Portainer 10 minutes
+## INSTALL nginex-proxy-manager on Portainer (10 minutes)
 Go to Portainer web: 192.168.1.111:9000
 (IP here, and rest of doc, is only as an example, you can find your ip using: hostname -I)
 -Click "Networks"
@@ -195,7 +194,7 @@ EXTRA information: Let's encrypt can issue 5 SSL certificates within the same co
 <br/>
 <p></p>
 
-INSTALL immich on PORTAINER:
+INSTALL immich on PORTAINER (10 minutes):
 Pre-information:
 I have added /media/tor/ex4TB/immich/external:/media/tor/ex4TB/immich/external as volumes as I used it for a while, but soon found out that it's a lot better to add bulk pictures and video using CLI command API.
 I decided to leave the two volume entries in this setup as you might want to use it. I recommend using CLI. (replace ex4TB with your diskname)
@@ -292,9 +291,32 @@ In Immich web: 192.168.1.111:2283
 -Click "Save"
 
 Additional information:
+-Samba:
 Since you have enabled Samba share, you can take a backup of all your photos/videos at this location:
 \\192.168.1.111\immich
 So if you have a server you can easily create a sync job to take a backup this way.
+
+-Powershell:
+* Install [Node.JS bundled with NPM](https://nodejs.org/en/download), download and run the setup.
+* Install the new [@immich-cli] in powershell
+```
+npm i -g @immich/cli
+```
+* Find your users API key
+In Immich web: 192.168.1.111:2283
+-Click "Your User Icon" (Top right corner)
+-Click "Account Settings"
+-Click "API Keys"
+-Click "Create Key"
+-Copy the key
+-Click "Done"
+Login to your immich server
+```
+immich login https://192.168.1.111/api YourApiKeyHere
+```
+```
+immich upload --recursive 'F:\ExampleDir\ExampleUser1'
+```
 
 
 
