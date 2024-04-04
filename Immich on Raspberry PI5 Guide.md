@@ -354,7 +354,7 @@ So if you have a server you can easily create a sync job to take a backup this w
 ```
 npm i -g @immich/cli
 ```
-* Find your users API key
+Find your users API key
 In Immich web: 192.168.1.111:2283
 - Click "Your User Icon" (Top right corner)
 - Click "Account Settings"
