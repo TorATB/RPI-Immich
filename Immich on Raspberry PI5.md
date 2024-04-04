@@ -125,7 +125,7 @@ hostname -I
 <br/>
 <p></p>
 
-## INSTALL Portainer (3 minutes):
+## INSTALL Portainer (5 minutes):
 Install Portainer (if you need SUDO here, then your user is missing from docker group.)
 ```
 docker volume create portainer_data
@@ -168,9 +168,9 @@ services:
       - /srv/letsencrypt:/etc/letsencrypt
 ```
 - Click "Deploy the stack"
+<hr>
 
-
-In Nginx Proxy Manager web: 192.168.1.111:81
+Go to Nginx Proxy Manager web: 192.168.1.111:81
 Default username:
 ```
 admin@example.com
