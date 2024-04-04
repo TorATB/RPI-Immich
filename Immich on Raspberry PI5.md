@@ -73,8 +73,10 @@ sudo adduser yourusername docker
 newgrp docker
 ```
 newgrp is for refreshing so you don't have to log out and in again.
+<br/>
+<br/>
+<p></p>
 
-...
 ## INSTALL Samba (5 minutes):
 Install Samba
 ```
@@ -116,8 +118,10 @@ OPTIONAL - If you need to know host IP address
 ```
 hostname -I
 ```
+<br/>
+<br/>
+<p></p>
 
-...
 ## INSTALL Portainer (3 minutes):
 Install Portainer (if you need SUDO here, then your user is missing from docker group.)
 ```
@@ -187,9 +191,10 @@ changeme
 -Click "Save"
 
 EXTRA information: Let's encrypt can issue 5 SSL certificates within the same couple of days, so if you are testing and need to reset your whole box and re-issue for certificates, you have 5 tries for that domain.
+<br/>
+<br/>
+<p></p>
 
-
-...
 INSTALL immich on PORTAINER:
 Pre-information:
 I have added /media/tor/ex4TB/immich/external:/media/tor/ex4TB/immich/external as volumes as I used it for a while, but soon found out that it's a lot better to add bulk pictures and video using CLI command API.
@@ -202,6 +207,7 @@ Go to Portainer web: 192.168.1.111:9000
 -Make sure "Web Editor" is selected
 -Fill in CODE BELOW:
 
+```
 name: immich
 services:
   immich-server:
@@ -259,24 +265,22 @@ services:
 volumes:
   pgdata:
   model-cache:
-
+```
 -Click "Advanced mode"
 -Fill in CODE BELOW:
-
+```
 UPLOAD_LOCATION=/media/tor/ex4TB/immich
-DB_PASSWORD=MessyRoom
+DB_PASSWORD=changeme
 IMMICH_VERSION=release
 DB_HOSTNAME=immich_postgres
 DB_USERNAME=postgres
 DB_DATABASE_NAME=immich
 REDIS_HOSTNAME=immich_redis
-
--Click "Simple mode"
+```
+-Click "Simple mode" (to switch back, optional)
 -Click "Deploy the stack"
 
-
-
-In Immich web: 192.168.1.28:2283
+In Immich web: 192.168.1.111:2283
 -Set up new user...
 -Click "Administration"
 -Click "External Library"
@@ -287,34 +291,10 @@ In Immich web: 192.168.1.28:2283
 -Fill in "/media/tor/ex4TB/immich/external"
 -Click "Save"
 
+Additional information:
+Since you have enabled Samba share, you can take a backup of all your photos/videos at this location:
+\\192.168.1.111\immich
+So if you have a server you can easily create a sync job to take a backup this way.
 
 
 
-Youjhejeje
-
-
-
-...
-
-After you jkfsdl
-This command wilfklsdøfk
-```
-exift joda jeje
-```
-jeje
-```
-jofejklj
-```
-
-
-## Powershell:  "get date from various filenames.ps1"
-
-
-Youfsdf the script).
-
-Here is a list of filenames that I tested on and it fould all the names containing the dates!
-```
-2ID_20210704_104414.mp4
-VID_20210704_105134.mp4
-```
-33000 files takes about 60 minutes to run.
