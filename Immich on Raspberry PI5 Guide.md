@@ -332,6 +332,7 @@ REDIS_HOSTNAME=immich_redis
 - Click "Deploy the stack"
 
 In Immich web: 192.168.1.111:2283
+
 Set up new user
 - Click "Administration"
 - Click "External Library"
@@ -367,6 +368,7 @@ Login to your immich server
 ```
 immich login https://192.168.1.111/api YourApiKeyHere
 ```
+Upload files to your immich server
 ```
 immich upload --recursive 'F:\ExampleDir\ExampleUser1'
 ```
