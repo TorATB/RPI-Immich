@@ -24,7 +24,7 @@ Go here for rest of the guide:
 https://wiki.geekworm.com/NVMe_SSD_boot_with_the_Raspberry_Pi_5
 
 
-
+...
 ## SETUP External USB disk:
 
 I removed all the partitions in windows, as I'm a very beginner in Linux (PI OS), and set the drive as GPT.
