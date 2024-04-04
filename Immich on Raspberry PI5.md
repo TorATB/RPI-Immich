@@ -138,19 +138,21 @@ sudo chown -R myusername:myusername /srv
 
 ...
 ## INSTALL nginex-proxy-manager on Portainer (10 minutes)
-Go to Portainer web: 192.168.1.111:9000
+<p>Go to Portainer web: 192.168.1.111:9000
 (IP here, and rest of doc, is only as an example, you can find your ip using: hostname -I)
 - Click "Networks"
 - Click "Add Network"
 - Fill in name "npm-network"
-- Click "Create the Network"
-<line>
+- Click "Create the Network"<p/>
+<hr>
 Next
+<p>
 - Click Stacks
 - Click "Add Stack"
 - Fill in name "nginx-proxy-manager"
 - Make sure "Web Editor" is selected
 - Fill in CODE BELOW:
+</p>
 ```
 version: '3.8'
 services:
