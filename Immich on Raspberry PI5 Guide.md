@@ -118,7 +118,8 @@ Restart Samba service:
 ```
 sudo systemctl restart smbd
 ```
-OPTIONAL Command - If you need to know host IP address
+OPTIONAL Command<br/>
+If you need to know host IP address
 ```
 hostname -I
 ```
