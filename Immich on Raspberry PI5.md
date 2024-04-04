@@ -39,7 +39,7 @@ Create the partition:
 ```
 sudo fdisk /dev/sda
 ```
-...
+
 <pre>
 Within FDISK, press:
     d ...to delete the current partition (if you have any pratitions)
@@ -50,7 +50,7 @@ Within FDISK, press:
 
 Map the disk: (replace ex4TB with your diskname)
 </pre>
-...
+
 ```
 mkfs.ext4 -L ex4TB /dev/sda1
 ```
