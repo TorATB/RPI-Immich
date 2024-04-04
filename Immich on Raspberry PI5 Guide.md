@@ -345,7 +345,7 @@ Go to Immich web: 192.168.1.111:2283
 - Login
 
 OPTIONAL<br/>
-Setup External Library, External Library is for viewing ONLY, you cannot delete files (even in the graphical userface). I like immich-cli command for importing better, this gives full control of the imported files.
+Setup External Library in the GUI, you need both docker-compose.yml (pasted code to Web Editor) and the GUI for it to show up. External Library is for viewing ONLY, you cannot delete files (even in the GUI). I like immich-cli command for importing better, this gives full control of the imported files.
 - Click "Administration"
 - Click "External Library"
 - Click "Create Library"
