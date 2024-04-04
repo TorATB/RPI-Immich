@@ -125,7 +125,7 @@ hostname -I
 <br/>
 <p></p>
 
-## INSTALL Portainer (5 minutes):
+## INSTALL Portainer (2 minutes):
 Install Portainer (if you need SUDO here, then your user is missing from docker group.)
 ```
 docker volume create portainer_data
@@ -135,8 +135,50 @@ OPTIONAL - If you like to store some data outside containers do this step, now y
 ```
 sudo chown -R myusername:myusername /srv
 ```
+<br/>
+<br/>
+<p></p>
 
-...
+## Setup your external domain, a free no-ip.org will work fine (5 minutes)
+Go to www.no-ip.org
+- Create a new user, or login to your existing one
+- Click "Dynamic DNS"
+- Click "NO-IP Hostnames"
+- Click "Create Hostname"
+- Fill in Hostname "ExamplePrefix"
+- Choose drop down menu "no-ip.org"
+- Make sure "DNS Host (A)" is selected
+- Fill in your EXTERNAL IP (no-ip will display it in the textbox as background, so just read it, then type it back in)
+
+## Setup your router port forwarding (5 minutes)
+This guide is only for the router i use, but it should be a similar process for you.
+Go to 192.168.1.1 (this is usually the ip for your router)
+- I Click "Advanced"
+- I Click "Advanced Setup"
+- I Click "Port Forwarding / Port Triggering"
+- I Make sure I have "Port Forwarding" selected
+
+HTTPS
+
+- I Click "Add Custom Service"
+- I Fill inn Service Name "Immich-HTTPS"
+- I Make sure I have "TCP/UDP" selected
+- I Fill inn External Port Range "443"
+- I Fill inn Internal Port Range "443"
+- I Fill inn the IP Address for my Raspberry PI5 "192.168.1.111"
+
+OPTIONAL HTTP
+
+- I Click "Add Custom Service"
+- I Fill inn Service Name "Immich-HTTP"
+- I Make sure I have "TCP/UDP" selected
+- I Fill inn External Port Range "80"
+- I Fill inn Internal Port Range "80"
+- I Fill inn the IP Address for my Raspberry PI5 "192.168.1.111"
+<br/>
+<br/>
+<p></p>
+
 ## INSTALL nginex-proxy-manager on Portainer (10 minutes)
 Go to Portainer web: 192.168.1.111:9000
 (IP here, and rest of doc, is only as an example, you can find your ip using: hostname -I)
