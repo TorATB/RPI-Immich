@@ -332,8 +332,7 @@ REDIS_HOSTNAME=immich_redis
 - Click "Simple mode" (to switch back, optional)
 - Click "Deploy the stack"
 
-### Go to Immich web: 192.168.1.111:2283
-
+Go to Immich web: 192.168.1.111:2283
 - Set up new user
 - Login
 
