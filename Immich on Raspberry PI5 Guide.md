@@ -49,10 +49,9 @@ Within FDISK, press:
     p ...to specify it as a PRIMARY partition
     1 ...to set it as the 1ST primary partition
     w ...to write the changes.
-
-Map the disk: (replace ex4TB with your diskname)
 </pre>
 
+Map the disk: (replace ex4TB with your diskname)
 ```
 mkfs.ext4 -L ex4TB /dev/sda1
 ```
