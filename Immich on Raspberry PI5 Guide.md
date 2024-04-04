@@ -118,11 +118,11 @@ Restart Samba service:
 ```
 sudo systemctl restart smbd
 ```
-OPTIONAL - If you need to know host IP address
+OPTIONAL Command - If you need to know host IP address
 ```
 hostname -I
 ```
-ADDITIONAL INFO
+ADDITIONAL INFO<br/>
 Since you have a share at \\192.168.1.111\immich, you can easily set up a backup job if you have a server on your network.
 <br/>
 <br/>
