@@ -20,6 +20,7 @@ The whole installation process should take about 30 minutes.
 <p></p>
 
 ## INITIAL SETUP of the PI5 (20 minutes) (External guide)
+
 Assemble your PI5 withut the case (you probably need a few tries, so don't use the case in the beginning)
 Plug your Micro SD card in a PC/MAC, download the Raspberry PI5 image and create an installation media using "Raspberry PI5 imager".
 Insert the SD card, do not insert the M.2 disk.
