@@ -85,11 +85,11 @@ Install Samba
 ```
 sudo apt-get install samba samba-common-bin
 ```
-OPTIONAL - If you need to remove old directory (replace ex4TB with your diskname)
+OPTIONAL - If you need to remove old directory (replace tor and ex4TB with your names)
 ```
 sudo rm -R "/media/tor/ex4TB/immich"
 ```
-Creating directory (don't use SUDO here) (replace ex4TB with your diskname)
+Creating directory (don't use SUDO here) (replace tor and ex4TB with your names)
 ```
 mkdir "/media/tor/ex4TB/immich"
 mkdir "/media/tor/ex4TB/immich/external"
@@ -98,7 +98,7 @@ Creating the share configuration-file
 ```
 sudo nano /etc/samba/smb.conf
 ```
-Paste information in the conf file (replace ex4TB with your diskname)
+Paste information in the conf file (replace tor and ex4TB with your names)
 ```
 [immich]
 path = /media/tor/ex4TB/immich
@@ -201,7 +201,7 @@ EXTRA information: Let's encrypt can issue 5 SSL certificates within the same co
 INSTALL immich on PORTAINER (10 minutes):
 Pre-information:
 I have added /media/tor/ex4TB/immich/external:/media/tor/ex4TB/immich/external as volumes as I used it for a while, but soon found out that it's a lot better to add bulk pictures and video using CLI command API.
-I decided to leave the two volume entries in this setup as you might want to use it. I recommend using CLI. (replace ex4TB with your diskname)
+I decided to leave the two volume entries in this setup as you might want to use it. I recommend using CLI. (replace tor and ex4TB with your names)
 
 Go to Portainer web: 192.168.1.111:9000
 - Click Stacks
@@ -270,7 +270,7 @@ volumes:
   model-cache:
 ```
 - Click "Advanced mode"
-- Fill in CODE BELOW:
+- Fill in CODE BELOW: (replace tor and ex4TB with your names, also set a new password)
 ```
 UPLOAD_LOCATION=/media/tor/ex4TB/immich
 DB_PASSWORD=changeme
