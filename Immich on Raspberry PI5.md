@@ -168,6 +168,9 @@ services:
       - /srv/letsencrypt:/etc/letsencrypt
 ```
 - Click "Deploy the stack"
+
+ADDITIONAL INFO, since we use /srv in volumes, this means that if you, at a later time, remove the stack and the volumes, the data will persist sinde its stored outside docker at /srv
+
 <hr>
 
 Go to Nginx Proxy Manager web: 192.168.1.111:81
