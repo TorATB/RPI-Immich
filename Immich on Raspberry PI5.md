@@ -136,16 +136,16 @@ sudo chown -R myusername:myusername /srv
 ## INSTALL nginex-proxy-manager on Portainer (10 minutes)
 Go to Portainer web: 192.168.1.111:9000
 (IP here, and rest of doc, is only as an example, you can find your ip using: hostname -I)
--Click "Networks"
--Click "Add Network"
--Fill in name "npm-network"
--Click "Create the Network"
+- Click "Networks"
+- Click "Add Network"
+- Fill in name "npm-network"
+- Click "Create the Network"
 
--Click Stacks
--Click "Add Stack"
--Fill in name "nginx-proxy-manager"
--Make sure "Web Editor" is selected
--Fill in CODE BELOW:
+- Click Stacks
+- Click "Add Stack"
+- Fill in name "nginx-proxy-manager"
+- Make sure "Web Editor" is selected
+- Fill in CODE BELOW:
 ```
 version: '3.8'
 services:
@@ -161,7 +161,7 @@ services:
       - /srv/nginx-proxy-manager:/data
       - /srv/letsencrypt:/etc/letsencrypt
 ```
--Click "Deploy the stack"
+- Click "Deploy the stack"
 
 
 In Nginx Proxy Manager web: 192.168.1.111:81
@@ -173,21 +173,21 @@ Default password:
 ```
 changeme
 ```
--Click "Hosts"
--Click "Proxy Hosts"
--Click "Add proxy host"
--Fill in Domain Names EXAMPLE "myfreedomainname.no-ip.org"
--Fill in Forward Hostname/IP EXAMPLE "192.168.1.111"
--Fill in Forward Port "2283"
--Enable "Websockets Support"
--Click "Save"
--Click "..."
--Click "Edit"
--Click "SSL"
--Change "None" to "Request Certificate"
--Enable "Force SSL"
--Enable "HTTP/2 Support"
--Click "Save"
+- Click "Hosts"
+- Click "Proxy Hosts"
+- Click "Add proxy host"
+- Fill in Domain Names EXAMPLE "myfreedomainname.no-ip.org"
+- Fill in Forward Hostname/IP EXAMPLE "192.168.1.111"
+- Fill in Forward Port "2283"
+- Enable "Websockets Support"
+- Click "Save"
+- Click "..."
+- Click "Edit"
+- Click "SSL"
+- Change "None" to "Request Certificate"
+- Enable "Force SSL"
+- Enable "HTTP/2 Support"
+- Click "Save"
 
 EXTRA information: Let's encrypt can issue 5 SSL certificates within the same couple of days, so if you are testing and need to reset your whole box and re-issue for certificates, you have 5 tries for that domain.
 <br/>
@@ -200,11 +200,11 @@ I have added /media/tor/ex4TB/immich/external:/media/tor/ex4TB/immich/external a
 I decided to leave the two volume entries in this setup as you might want to use it. I recommend using CLI. (replace ex4TB with your diskname)
 
 Go to Portainer web: 192.168.1.111:9000
--Click Stacks
--Click "Add Stack"
--Fill in name "immich"
--Make sure "Web Editor" is selected
--Fill in CODE BELOW:
+- Click Stacks
+- Click "Add Stack"
+- Fill in name "immich"
+- Make sure "Web Editor" is selected
+- Fill in CODE BELOW:
 
 ```
 name: immich
@@ -265,8 +265,8 @@ volumes:
   pgdata:
   model-cache:
 ```
--Click "Advanced mode"
--Fill in CODE BELOW:
+- Click "Advanced mode"
+- Fill in CODE BELOW:
 ```
 UPLOAD_LOCATION=/media/tor/ex4TB/immich
 DB_PASSWORD=changeme
@@ -276,19 +276,19 @@ DB_USERNAME=postgres
 DB_DATABASE_NAME=immich
 REDIS_HOSTNAME=immich_redis
 ```
--Click "Simple mode" (to switch back, optional)
--Click "Deploy the stack"
+- Click "Simple mode" (to switch back, optional)
+- Click "Deploy the stack"
 
 In Immich web: 192.168.1.111:2283
--Set up new user...
--Click "Administration"
--Click "External Library"
--Click "Create Library"
--Click "Create"
--Click "..."
--Click "Edit Import Paths"
--Fill in "/media/tor/ex4TB/immich/external"
--Click "Save"
+* Set up new user...
+- Click "Administration"
+- Click "External Library"
+- Click "Create Library"
+- Click "Create"
+- Click "..."
+- Click "Edit Import Paths"
+- Fill in "/media/tor/ex4TB/immich/external"
+- Click "Save"
 
 Additional information:
 -Samba:
@@ -304,12 +304,13 @@ npm i -g @immich/cli
 ```
 * Find your users API key
 In Immich web: 192.168.1.111:2283
--Click "Your User Icon" (Top right corner)
--Click "Account Settings"
--Click "API Keys"
--Click "Create Key"
--Copy the key
--Click "Done"
+- Click "Your User Icon" (Top right corner)
+- Click "Account Settings"
+- Click "API Keys"
+- Click "Create Key"
+- Copy the key
+- Click "Done"
+
 Login to your immich server
 ```
 immich login https://192.168.1.111/api YourApiKeyHere
