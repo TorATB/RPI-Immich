@@ -257,9 +257,8 @@ Let's encrypt can issue 5 SSL certificates within the same couple of days, so if
 <p></p>
 
 ## INSTALL immich on PORTAINER (10 minutes):
-Pre-information:
-I have added /media/tor/ex4TB/immich/external:/media/tor/ex4TB/immich/external as volumes as I used it for a while, but soon found out that it's a lot better to add bulk pictures and video using CLI command API.
-I decided to leave the two volume entries in this setup as you might want to use it. I recommend using CLI. (replace tor and ex4TB with your names)
+ADDITIONAL INFO<br/>
+I have added /media/tor/ex4TB/immich/external:/media/tor/ex4TB/immich/external as volumes as I used it for a while, but soon found out that it's a lot better to add bulk pictures and video using CLI command API. I decided to leave the two volume entries in this setup as you might want to use it. I recommend using CLI. (replace tor and ex4TB with your names)
 
 Go to Portainer web: 192.168.1.111:9000
 - Click Stacks
