@@ -217,6 +217,7 @@ ADDITIONAL INFO - Since we use /srv in volumes, this means that if you, at a lat
 <hr>
 
 Go to Nginx Proxy Manager web: 192.168.1.111:81
+
 Default username:
 ```
 admin@example.com
@@ -355,8 +356,10 @@ So if you have a server you can easily create a sync job to take a backup this w
 ```
 npm i -g @immich/cli
 ```
+
 Find your users API key
-In Immich web: 192.168.1.111:2283
+
+Go to Immich web: 192.168.1.111:2283
 - Click "Your User Icon" (Top right corner)
 - Click "Account Settings"
 - Click "API Keys"
