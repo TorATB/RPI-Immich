@@ -153,6 +153,7 @@ Go to www.no-ip.org
 ## Setup your router port forwarding (5 minutes)
 This guide is only for the router i use, but it should be a similar process for you.
 Go to 192.168.1.1 (this is usually the ip for your router)
+- I Login
 - I Click "Advanced"
 - I Click "Advanced Setup"
 - I Click "Port Forwarding / Port Triggering"
