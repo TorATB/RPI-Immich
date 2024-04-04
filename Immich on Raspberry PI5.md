@@ -169,7 +169,7 @@ services:
 ```
 - Click "Deploy the stack"
 
-ADDITIONAL INFO, since we use /srv in volumes, this means that if you, at a later time, remove the stack and the volumes, the data will persist sinde its stored outside docker at /srv
+ADDITIONAL INFO - Since we use /srv in volumes, this means that if you, at a later time, remove the stack and the volumes, the data will persist since its stored outside docker at location /srv
 
 <hr>
 
