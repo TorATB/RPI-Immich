@@ -216,7 +216,7 @@ ADDITIONAL INFO - Since we use /srv in volumes, this means that if you, at a lat
 
 <hr>
 
-Go to Nginx Proxy Manager web: 192.168.1.111:81
+### Go to Nginx Proxy Manager web: 192.168.1.111:81
 
 Default username:
 ```
