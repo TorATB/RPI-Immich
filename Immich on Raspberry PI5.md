@@ -29,7 +29,6 @@ https://wiki.geekworm.com/NVMe_SSD_boot_with_the_Raspberry_Pi_5
 <br/>
 <p></p>
 
-...
 ## SETUP External USB disk:
 
 I removed all the partitions in windows, as I'm a very beginner in Linux (PI OS), and set the drive as GPT.
@@ -55,8 +54,9 @@ Plug in the usb and go to /media/[yourusername] in the terminal.
 Type ls -al and see if the USB mount point is owned by root.
 If it is, type sudo chown [username]:[username] [mount point]
 and enter your password when asked.
+<br/>
+<p></p>
 
-...
 ## INSTALL Docker (3 minutes):
 
 ```
