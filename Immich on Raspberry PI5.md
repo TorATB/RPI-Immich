@@ -6,14 +6,11 @@ My hardware are as following:
 - Raspberry Pi 5
 - Official Raspberry PI 5 power adapter (or the one with the PI Hat)
 Important with 5V AND 5A or else your system will be unstable!
-- PI Hat for M.2 SSD
-https://www.aliexpress.com/item/1005006383425420.html?spm=a2g0o.order_detail.order_detail_item.3.25086d76ShtfSJ
-- PI Case designed for PI Hat
-https://www.aliexpress.com/item/1005006383425420.html?spm=a2g0o.order_detail.order_detail_item.5.25086d76ShtfSJ
+- [PI Hat for M.2 SSD](https://www.aliexpress.com/item/1005006383425420.html?spm=a2g0o.order_detail.order_detail_item.3.25086d76ShtfSJ)
+- [PI Case designed for PI Hat](https://www.aliexpress.com/item/1005006383425420.html?spm=a2g0o.order_detail.order_detail_item.5.25086d76ShtfSJ)
 - M.2 disk
 - USB External HDD 3.5" 4TB (for storing pictures and videos)
-- M.2 to USB device
-https://www.aliexpress.com/item/1005001524803408.html?spm=a2g0o.order_list.order_list_main.51.54721802hr2nsZ
+- [M.2 to USB device](https://www.aliexpress.com/item/1005001524803408.html?spm=a2g0o.order_list.order_list_main.51.54721802hr2nsZ)
 - Micro SD card
 
 The whole installation process should take about 30 minutes.
@@ -25,8 +22,6 @@ Insert the SD card, do not insert the M.2 disk.
 
 Go here for rest of the guide:
 https://wiki.geekworm.com/NVMe_SSD_boot_with_the_Raspberry_Pi_5
-
-Credit to [cduff](https://community.spiceworks.com/people/craigduff) at [spiceworks.com](https://community.spiceworks.com/topic/1869414-find-date-in-a-file-name-and-split-it-off) (I used some of his code)
 
 
 
