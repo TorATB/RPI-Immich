@@ -65,22 +65,6 @@ and enter your password when asked.
 <br/>
 <p></p>
 
-## INSTALL Docker (3 minutes):
-
-```
-sudo apt update && sudo apt upgrade -y
-curl -sSL https://get.docker.com | sh
-```
-Add user to docker group (replace yourusername)
-```
-sudo adduser yourusername docker
-newgrp docker
-```
-newgrp is for refreshing so you don't have to log out and in again.
-<br/>
-<br/>
-<p></p>
-
 ## INSTALL Samba (5 minutes):
 Install Samba
 ```
@@ -126,6 +110,23 @@ hostname -I
 ```
 ADDITIONAL INFO<br/>
 Since you have a share at \\192.168.1.111\immich, you can easily set up a backup job if you have a server on your network. This backup will also include the \immich\external folder, so it should be a complete backup of every photo and video.
+<br/>
+<br/>
+<p></p>
+
+
+## INSTALL Docker (3 minutes):
+
+```
+sudo apt update && sudo apt upgrade -y
+curl -sSL https://get.docker.com | sh
+```
+Add user to docker group (replace yourusername)
+```
+sudo adduser yourusername docker
+newgrp docker
+```
+newgrp is for refreshing so you don't have to log out and in again.
 <br/>
 <br/>
 <p></p>
