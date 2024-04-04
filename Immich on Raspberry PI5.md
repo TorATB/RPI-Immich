@@ -146,6 +146,7 @@ Go to Portainer web: 192.168.1.111:9000
 - Click "Create the Network"
 <hr>
 Next
+
 - Click Stacks
 - Click "Add Stack"
 - Fill in name "nginx-proxy-manager"
