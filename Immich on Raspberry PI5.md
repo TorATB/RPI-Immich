@@ -16,6 +16,8 @@ Important with 5V AND 5A or else your system will be unstable!
 - Micro SD card
 
 The whole installation process should take about 30 minutes.
+<br/>
+<p></p>
 
 ## INITIAL SETUP of the PI5 (20 minutes) (External guide)
 Assemble your PI5 withut the case (you probably need a few tries, so don't use the case in the beginning)
@@ -24,7 +26,8 @@ Insert the SD card, do not insert the M.2 disk.
 
 Go here for rest of the guide:
 https://wiki.geekworm.com/NVMe_SSD_boot_with_the_Raspberry_Pi_5
-
+<br/>
+<p></p>
 
 ...
 ## SETUP External USB disk:
