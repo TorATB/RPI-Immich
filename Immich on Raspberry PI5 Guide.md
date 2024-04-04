@@ -332,7 +332,7 @@ REDIS_HOSTNAME=immich_redis
 - Click "Deploy the stack"
 
 In Immich web: 192.168.1.111:2283
-* Set up new user...
+Set up new user
 - Click "Administration"
 - Click "External Library"
 - Click "Create Library"
