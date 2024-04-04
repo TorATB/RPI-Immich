@@ -1,4 +1,4 @@
-# How to setup Immich on a Raspberry PI5 using Dock, Portainer and Nginx Proxy Manager(Let's encrypt Certificates)
+# How to setup Immich on a Raspberry PI5 using Dock, Portainer and Nginx Proxy Manager (Let's encrypt Certificates)
 <br/>
 <p></p>
 
