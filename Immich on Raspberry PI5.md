@@ -17,6 +17,7 @@ Important with 5V AND 5A or else your system will be unstable!
 
 The whole installation process should take about 30 minutes.
 <br/>
+<br/>
 <p></p>
 
 ## INITIAL SETUP of the PI5 (20 minutes) (External guide)
@@ -27,6 +28,7 @@ Insert the SD card, do not insert the M.2 disk.
 
 Go here for rest of the guide:
 https://wiki.geekworm.com/NVMe_SSD_boot_with_the_Raspberry_Pi_5
+<br/>
 <br/>
 <p></p>
 
@@ -55,6 +57,7 @@ Plug in the usb and go to /media/[yourusername] in the terminal.
 Type ls -al and see if the USB mount point is owned by root.
 If it is, type sudo chown [username]:[username] [mount point]
 and enter your password when asked.
+<br/>
 <br/>
 <p></p>
 
