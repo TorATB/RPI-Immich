@@ -86,7 +86,8 @@ Install Samba
 ```
 sudo apt-get install samba samba-common-bin
 ```
-OPTIONAL - If you need to remove old directory (replace tor and ex4TB with your names)
+OPTIONAL<br/>
+If you need to remove old directory (replace tor and ex4TB with your names)
 ```
 sudo rm -R "/media/tor/ex4TB/immich"
 ```
@@ -118,7 +119,7 @@ Restart Samba service:
 ```
 sudo systemctl restart smbd
 ```
-OPTIONAL Command<br/>
+OPTIONAL<br/>
 If you need to know host IP address
 ```
 hostname -I
@@ -135,7 +136,8 @@ Install Portainer (if you need SUDO here, then your user is missing from docker 
 docker volume create portainer_data
 docker run -d -p 8000:8000 -p 9000:9000 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
 ```
-OPTIONAL - If you like to store some data outside containers do this step, now you can store it in /srv
+OPTIONAL<br/>
+If you like to store some data outside containers do this step, now you can store it in /srv
 ```
 sudo chown -R myusername:myusername /srv
 ```
@@ -172,7 +174,8 @@ HTTPS
 - I Fill inn Internal Port Range "443"
 - I Fill inn the IP Address for my Raspberry PI5 "192.168.1.111"
 
-OPTIONAL HTTP
+OPTIONAL<br/>
+HTTP
 
 - I Click "Add Custom Service"
 - I Fill inn Service Name "Immich-HTTP"
@@ -216,7 +219,8 @@ services:
 ```
 - Click "Deploy the stack"
 
-ADDITIONAL INFO - Since we use /srv in volumes, this means that if you, at a later time, remove the stack and the volumes, the data will persist since its stored outside docker at location /srv
+ADDITIONAL INFO<br/>
+Since we use /srv in volumes, this means that if you, at a later time, remove the stack and the volumes, the data will persist since its stored outside docker at location /srv
 
 <hr>
 
@@ -246,7 +250,8 @@ changeme
 - Enable "HTTP/2 Support"
 - Click "Save"
 
-EXTRA information: Let's encrypt can issue 5 SSL certificates within the same couple of days, so if you are testing and need to reset your whole box and re-issue for certificates, you have 5 tries for that domain.
+ADDITIONAL INFO<br/>
+Let's encrypt can issue 5 SSL certificates within the same couple of days, so if you are testing and need to reset your whole box and re-issue for certificates, you have 5 tries for that domain.
 <br/>
 <br/>
 <p></p>
@@ -340,9 +345,8 @@ Go to Immich web: 192.168.1.111:2283
 - Set up new user
 - Login
 
-OPTIONAL Setup External Library
-Remeber, External Library is for viewing ONLY, you cannot delete files (even in the graphical userface)
-I like immich-cli command for importing better, this gives full control of the imported files.
+OPTIONAL<br/>
+Setup External Library, External Library is for viewing ONLY, you cannot delete files (even in the graphical userface). I like immich-cli command for importing better, this gives full control of the imported files.
 - Click "Administration"
 - Click "External Library"
 - Click "Create Library"
@@ -353,7 +357,8 @@ I like immich-cli command for importing better, this gives full control of the i
 - Click "Save"
 
 
-OPTIONAL Installing immich-cli in Powershell:
+OPTIONAL<br/>
+Installing immich-cli in Powershell:
 - Install [Node.JS bundled with NPM](https://nodejs.org/en/download), download and run the setup.
 - Install the new @immich-cli in powershell
 ```
