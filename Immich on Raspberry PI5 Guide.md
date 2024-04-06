@@ -129,6 +129,38 @@ ls -al
 ```
 to verify that your user has ownership of the folder (all other folders here should be owned by root)
 
+Mounting the usb drive
+```
+sudo mount /dev/sdb1 /media/usb4TB
+```
+
+Verify that it's mounted correctly
+```
+df -h
+```
+It sould look something like this, note bottom line information
+<pre>
+Filesystem      Size  Used Avail Use% Mounted on
+udev            3.8G     0  3.8G   0% /dev
+tmpfs           805M  6.7M  799M   1% /run
+/dev/sda2        28G  6.3G   20G  24% /
+tmpfs           4.0G  368K  4.0G   1% /dev/shm
+tmpfs           5.0M   48K  5.0M   1% /run/lock
+/dev/sda1       510M   74M  437M  15% /boot/firmware
+tmpfs           805M  144K  805M   1% /run/user/1000
+/dev/sdb1       3.6T   28K  3.4T   1% /media/usb4TB
+</pre>
+
+Add Automounting of the drive on boot
+```
+sudo nano /etc/fstab
+```
+Add the following line at the bottom of the file
+```
+/dev/sdb1   /media/usb4TB     ext4    defaults    0    0
+```
+
+
 <br/>
 <br/>
 <p></p>
