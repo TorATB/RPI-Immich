@@ -88,7 +88,7 @@ NOTE that fstype on sdb1 is missing
 <pre>
 NAME      FSTYPE FSVER LABEL     UUID                                     FSAVAIL FSUSE% MOUNTPOINTS
 sda
-├─sda1    vfat   FAT32 bootfs    50C8-AEAE                                436.4M    14% /boot/firmware
+├─sda1    vfat   FAT32 bootfs    50C8-AEAE                                436.4M   14% /boot/firmware
 └─sda2    ext4   1.0   rootfs    fc7a1f9e-4967-4f41-a1f5-1b5927e6c5f9     19.9G    23% /
 sdb
 └─sdb1
@@ -107,7 +107,7 @@ NOTE that fstype on sdb1 is now present and has proper label!
 <pre>
 NAME      FSTYPE FSVER LABEL    UUID                                     FSAVAIL FSUSE% MOUNTPOINTS
 sda
-├─sda1    vfat   FAT32 bootfs    50C8-AEAE                               436.4M    14% /boot/firmware
+├─sda1    vfat   FAT32 bootfs    50C8-AEAE                               436.4M   14% /boot/firmware
 └─sda2    ext4   1.0   rootfs    fc7a1f9e-4967-4f41-a1f5-1b5927e6c5f9    19.9G    23% /
 sdb
 └─sdb1    ext4   1.0   usb4TB    ef63304c-d37c-495b-b381-4bb5d20110ce
