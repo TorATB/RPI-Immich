@@ -191,8 +191,9 @@ HTTP
 ## INSTALL nginex-proxy-manager on Portainer (10 minutes)
 Go to Portainer web: 192.168.1.111:9000
 (IP here, and rest of doc, is only as an example, you can find your ip using: hostname -I)
-- Create a new user
-- Log in
+- Create a new user and login
+- Click "Home"
+- Click "Live Connect" (on your right side)
 - Click "Networks"
 - Click "Add Network"
 - Fill in name "npm-network"
