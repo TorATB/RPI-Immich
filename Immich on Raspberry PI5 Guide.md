@@ -37,7 +37,7 @@ First I removed all the partitions in windows, as I'm a very beginner in Linux (
 Then Connect to your PI5 with Putty or something else.
 Then run these commands in the terminal.
 
-List out what disks are present
+List out disk info
 ```
 lsblk
 ```
@@ -53,21 +53,37 @@ sdb      8:16   0  3.6T  0 disk
 
 Create the partition:
 ```
-sudo fdisk /dev/sda
+sudo fdisk /dev/sdb
 ```
 
+You will get a warning if it's a disk larger than 2GB, no worries.
 <pre>
 Within FDISK, press:
-    d ...to delete the current partition (if you have any pratitions)
-    n ...to create a new partition
-    p ...to specify it as a PRIMARY partition
-    1 ...to set it as the 1ST primary partition
-    w ...to write the changes.
+    g          ...to create GPT disklabel
+    n          ...to create a new partition
+    <enter>    ...when asked for Partition number
+    <enter>    ...when asked for First sector
+    <enter>    ...when asked for Last sector
+    w          ...to write/save changes
 </pre>
 
-Map the disk: (replace ex4TB with your diskname)
+List out disk info, again
 ```
-mkfs.ext4 -L ex4TB /dev/sda1
+lsblk
+```
+<pre>
+It should look more like this now
+NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
+sda      8:0    1 28.6G  0 disk
+├─sda1   8:1    1  512M  0 part /boot/firmware
+└─sda2   8:2    1 28.1G  0 part /
+sdb      8:16   0  3.6T  0 disk
+└─sdb1   8:17   0  3.6T  0 part
+</pre>
+
+Format the disk and map it: (replace usb4TB with your diskname)
+```
+mkfs.ext4 -L usb4TB /dev/sdb1
 ```
 
 If you have any trouble accessing the disk with "Permission Denied"
