@@ -25,6 +25,16 @@ Assemble your PI5 withut the case (you probably need a few tries, so don't use t
 Plug your Micro SD card in a PC/MAC, download the Raspberry PI5 image and create an installation media using "Raspberry PI5 imager".
 Insert the SD card, do not insert the M.2 disk.
 
+You can start with updating the system and the firmware
+```
+sudo apt update && sudo apt upgrade -y
+sudo rpi-eeprom-update -a
+```
+Reboot yor PI5
+```
+sudo reboot
+```
+
 Go here for rest of the guide:
 https://wiki.geekworm.com/NVMe_SSD_boot_with_the_Raspberry_Pi_5
 <br/>
