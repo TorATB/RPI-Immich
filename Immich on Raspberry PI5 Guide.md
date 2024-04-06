@@ -71,8 +71,8 @@ List out disk info, again
 ```
 lsblk
 ```
-<pre>
 It should look more like this now
+<pre>
 NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
 sda      8:0    1 28.6G  0 disk
 ├─sda1   8:1    1  512M  0 part /boot/firmware
