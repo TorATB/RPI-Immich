@@ -113,11 +113,22 @@ sdb
 └─sdb1    ext4   1.0   usb4TB    ef63304c-d37c-495b-b381-4bb5d20110ce
 </pre>
 
-If you have any trouble accessing the disk with "Permission Denied"
-Plug in the usb and go to /media/[yourusername] in the terminal.
-Type ls -al and see if the USB mount point is owned by root.
-If it is, type sudo chown [username]:[username] [mount point]
-and enter your password when asked.
+Creating Mount point:
+NOTE: Replace usb4TB with your label
+```
+sudo mkdir /media/usb4TB
+```
+Change owner of usb4TB folder
+```
+sudo chown [username]:[username] /media/usb4TB
+```
+
+Go to /media folder and type
+```
+ls -al
+```
+to verify that your user has ownership of the folder (all other folders here should be owned by root)
+
 <br/>
 <br/>
 <p></p>
