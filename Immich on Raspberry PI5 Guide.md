@@ -61,9 +61,9 @@ You will get a warning if it's a disk larger than 2GB, no worries.
 Within FDISK, press:
     g          ...to create GPT disklabel
     n          ...to create a new partition
-    <enter>    ...when asked for Partition number
-    <enter>    ...when asked for First sector
-    <enter>    ...when asked for Last sector
+    (enter)    ...when asked for Partition number
+    (enter)    ...when asked for First sector
+    (enter)    ...when asked for Last sector
     w          ...to write/save changes
 </pre>
 
