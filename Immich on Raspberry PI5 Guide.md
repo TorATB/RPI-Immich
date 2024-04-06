@@ -159,7 +159,10 @@ Add the following line at the bottom of the file
 ```
 /dev/sdb1   /media/usb4TB     ext4    defaults    0    0
 ```
-
+Reboot to verify that everything works
+```
+sudo reboot
+```
 
 <br/>
 <br/>
