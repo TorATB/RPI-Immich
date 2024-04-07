@@ -184,23 +184,23 @@ Install Samba
 sudo apt-get install samba samba-common-bin
 ```
 OPTIONAL<br/>
-If you need to remove old directory (replace tor and ex4TB with your names)
+If you need to remove old directory (replace tor and usb4TB with your names)
 ```
-sudo rm -R "/media/tor/ex4TB/immich"
+sudo rm -R "/media/tor/usb4TB/immich"
 ```
-Creating directory (don't use SUDO here) (replace tor and ex4TB with your names)
+Creating directory (don't use SUDO here) (replace tor and usb4TB with your names)
 ```
-mkdir "/media/tor/ex4TB/immich"
-mkdir "/media/tor/ex4TB/immich/external"
+mkdir "/media/tor/usb4TB/immich"
+mkdir "/media/tor/usb4TB/immich/external"
 ```
 Creating the share configuration-file
 ```
 sudo nano /etc/samba/smb.conf
 ```
-Paste information in the conf file (replace tor and ex4TB with your names)
+Paste information in the conf file (replace tor and usb4TB with your names)
 ```
 [immich]
-path = /media/tor/ex4TB/immich
+path = /media/tor/usb4TB/immich
 writeable=Yes
 create mask=0777
 directory mask=0777
@@ -375,7 +375,7 @@ Let's encrypt can issue 5 SSL certificates within the same couple of days, so if
 
 ## INSTALL immich on PORTAINER (10 minutes):
 ADDITIONAL INFO<br/>
-I have added /media/tor/ex4TB/immich/external:/media/tor/ex4TB/immich/external as volumes as I used it for a while, but soon found out that it's a lot better to add bulk pictures and video using CLI command API. I decided to leave the two volume entries in this setup as you might want to use it. I recommend using CLI. (replace tor and ex4TB with your names)
+I have added /media/tor/usb4TB/immich/external:/media/tor/usb4TB/immich/external as volumes as I used it for a while, but soon found out that it's a lot better to add bulk pictures and video using CLI command API. I decided to leave the two volume entries in this setup as you might want to use it. I recommend using CLI. (replace tor and usb4TB with your names)
 
 Go to Portainer web: 192.168.1.111:9000
 - Click Stacks
@@ -394,7 +394,7 @@ services:
     volumes:
       - ${UPLOAD_LOCATION}:/usr/src/app/upload
       - /etc/localtime:/etc/localtime:ro
-      - /media/tor/ex4TB/immich/external:/media/tor/ex4TB/immich/external
+      - /media/tor/usb4TB/immich/external:/media/tor/usb4TB/immich/external
     env_file:
       - stack.env
     ports:
@@ -410,7 +410,7 @@ services:
     volumes:
       - ${UPLOAD_LOCATION}:/usr/src/app/upload
       - /etc/localtime:/etc/localtime:ro
-      - /media/tor/ex4TB/immich/external:/media/tor/ex4TB/immich/external
+      - /media/tor/usb4TB/immich/external:/media/tor/usb4TB/immich/external
     env_file:
       - stack.env
     depends_on:
@@ -444,9 +444,9 @@ volumes:
   model-cache:
 ```
 - Click "Advanced mode"
-- Fill in CODE BELOW: (replace tor and ex4TB with your names, also set a new password)
+- Fill in CODE BELOW: (replace tor and usb4TB with your names, also set a new password)
 ```
-UPLOAD_LOCATION=/media/tor/ex4TB/immich
+UPLOAD_LOCATION=/media/tor/usb4TB/immich
 DB_PASSWORD=changeme
 IMMICH_VERSION=release
 DB_HOSTNAME=immich_postgres
@@ -469,7 +469,7 @@ Setup External Library in the GUI, you need both docker-compose.yml (pasted code
 - Click "Create"
 - Click "..."
 - Click "Edit Import Paths"
-- Fill in "/media/tor/ex4TB/immich/external"
+- Fill in "/media/tor/usb4TB/immich/external"
 - Click "Save"
 
 
