@@ -106,7 +106,7 @@ sdb
 
 Format the disk and label it / give it a name: (replace usb4TB with your diskname)
 ```
-mkfs.ext4 -L usb4TB /dev/sdb1
+sudo mkfs.ext4 -L usb4TB /dev/sdb1
 ```
 
 See more diskinfo, again:
