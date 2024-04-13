@@ -181,7 +181,7 @@ sudo reboot
 <br/>
 <p></p>
 
-## INSTALL Samba (5 minutes):
+## OPTIONAL INSTALL Samba (5 minutes):
 Install Samba
 ```
 sudo apt-get install samba samba-common-bin
@@ -230,6 +230,41 @@ Since you have a share at \\192.168.1.111\immich, you can easily set up a backup
 <br/>
 <p></p>
 
+## OPTIONAL MAP Network share for push backup
+Install CIFS, smb client
+```
+sudo apt install cifs-utils
+```
+Create mounting folder
+```
+sudo mkdir /media/share
+```
+Create credentials file
+```
+nano /root/.smbcredentials
+```
+Fill in this in the credentials file
+```
+username=smb_username
+password=smb_password
+```
+Restrict access to the credentials file
+```
+chmod 400 /root/.smbcredentials
+```
+Mount the share
+INFO: Here it's specified version 3.0, if you have an older system 1.0 might be used
+```
+sudo mount -t cifs -o rw,vers=3.0,credentials=/root/.smbcredentials //192.168.1.111/share /media/share
+```
+Set up AutoMount on reboot of the share
+```
+sudo nano /etc/fstab
+```
+Add this line at the end of your file
+```
+//192.168.1.111/share /media/share cifs vers=3.0,credentials=/root/.smbcredentials
+```
 
 ## INSTALL Docker (3 minutes):
 
