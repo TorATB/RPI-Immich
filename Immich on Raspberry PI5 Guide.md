@@ -263,10 +263,11 @@ tmpfs                       5.0M  8.0K  5.0M   1% /run/lock
 /dev/nvme0n1p1              511M  5.9M  506M   2% /boot/efi
 tmpfs                       1.6G  112K  1.6G   1% /run/user/1000
 </pre>
-Mine is 
+Mine is /dev/mapper/vg_system-var
 
 Give it some more space:
-INFO : Replace /dev/mapper/vg_system-var with other path if your system is set up with another path
+INFO1 : Replace /dev/mapper/vg_system-var with other path if your system is set up with another path
+INFO2 : I extended the disk with 25GB additional storage
 ```
 sudo lvextend -L +25G /dev/mapper/vg_system-var
 sudo resize2fs /dev/mapper/vg_system-var
@@ -288,7 +289,6 @@ tmpfs                       5.0M  8.0K  5.0M   1% /run/lock
 /dev/mapper/vg_system-var    30G  2.9G   26G  10% /var
 /dev/nvme0n1p1              511M  5.9M  506M   2% /boot/efi
 tmpfs                       1.6G  112K  1.6G   1% /run/user/1000
-tor@am-9c7befc0cfa7:~/docker$
 </pre>
 
 ## INSTALL Portainer (2 minutes):
