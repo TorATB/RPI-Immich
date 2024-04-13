@@ -244,7 +244,7 @@ newgrp is for refreshing so you don't have to log out and in again.
 <br/>
 <p></p>
 
-## PREPARING your OS for larger docker images (required for immich)
+## PREPARING your OS for larger docker images (required for immich on Debian OS)
 
 Check what your var directory is set up with
 ```
