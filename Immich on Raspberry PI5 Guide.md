@@ -25,9 +25,12 @@ Assemble your PI5 withut the case (you probably need a few tries, so don't use t
 Plug your Micro SD card in a PC/MAC, download the Raspberry PI5 image and create an installation media using "Raspberry PI5 imager".
 Insert the SD card, do not insert the M.2 disk.
 
-You can start with updating the system and the firmware
+You can start with updating the system
 ```
 sudo apt update && sudo apt upgrade -y
+```
+Update the firmware of your PI5
+```
 sudo rpi-eeprom-update -a
 ```
 Reboot yor PI5
