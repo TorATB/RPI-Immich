@@ -265,6 +265,14 @@ Add this line at the end of your file
 ```
 //192.168.1.111/share /media/share cifs vers=3.0,credentials=/root/.smbcredentials
 ```
+Create Scheduled task for backup every night
+```
+crontab -e
+```
+Paste the following to run the rsync job every night at 01:00
+```
+0 1 * * *  rsync -vr /media/usb4TB/immich/ /media/share/immich
+```
 
 ## INSTALL Docker (3 minutes):
 
