@@ -244,6 +244,53 @@ newgrp is for refreshing so you don't have to log out and in again.
 <br/>
 <p></p>
 
+## PREPARING your OS for larger docker images (required for immich)
+
+Check what your var directory is set up with
+```
+df -h
+```
+<pre>
+Filesystem                  Size  Used Avail Use% Mounted on
+udev                        7.7G     0  7.7G   0% /dev
+tmpfs                       1.6G  1.8M  1.6G   1% /run
+/dev/mapper/vg_system-root   16G   13G  1.4G  91% /
+tmpfs                       7.7G     0  7.7G   0% /dev/shm
+tmpfs                       5.0M  8.0K  5.0M   1% /run/lock
+/dev/nvme0n1p2              456M  145M  287M  34% /boot
+/dev/mapper/vg_system-home   30G   35M   29G   1% /home
+/dev/mapper/vg_system-var   5.1G  2.9G  2.0G  60% /var
+/dev/nvme0n1p1              511M  5.9M  506M   2% /boot/efi
+tmpfs                       1.6G  112K  1.6G   1% /run/user/1000
+</pre>
+Mine is 
+
+Give it some more space:
+INFO : Replace /dev/mapper/vg_system-var with other path if your system is set up with another path
+```
+sudo lvextend -L +25G /dev/mapper/vg_system-var
+sudo resize2fs /dev/mapper/vg_system-var
+```
+
+Check to see that the space was given ok
+```
+df -h
+```
+<pre>
+Filesystem                  Size  Used Avail Use% Mounted on
+udev                        7.7G     0  7.7G   0% /dev
+tmpfs                       1.6G  1.8M  1.6G   1% /run
+/dev/mapper/vg_system-root   16G   13G  1.4G  91% /
+tmpfs                       7.7G     0  7.7G   0% /dev/shm
+tmpfs                       5.0M  8.0K  5.0M   1% /run/lock
+/dev/nvme0n1p2              456M  145M  287M  34% /boot
+/dev/mapper/vg_system-home   30G   35M   29G   1% /home
+/dev/mapper/vg_system-var    30G  2.9G   26G  10% /var
+/dev/nvme0n1p1              511M  5.9M  506M   2% /boot/efi
+tmpfs                       1.6G  112K  1.6G   1% /run/user/1000
+tor@am-9c7befc0cfa7:~/docker$
+</pre>
+
 ## INSTALL Portainer (2 minutes):
 Install Portainer (if you need SUDO here, then your user is missing from docker group.)
 ```
