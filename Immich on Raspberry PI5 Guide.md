@@ -226,6 +226,7 @@ hostname -I
 ```
 ADDITIONAL INFO<br/>
 Since you have a share at \\192.168.1.111\immich, you can easily set up a backup job if you have a server on your network. This backup will also include the \immich\external folder, so it should be a complete backup of every photo and video.
+
 <br/>
 <br/>
 <p></p>
@@ -273,6 +274,10 @@ Paste the following to run the rsync job every night at 01:00
 ```
 0 1 * * *  rsync -vr /media/usb4TB/immich/ /media/share/immich
 ```
+
+<br/>
+<br/>
+<p></p>
 
 ## INSTALL Docker (3 minutes):
 
