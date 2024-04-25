@@ -623,13 +623,20 @@ immich upload --recursive 'F:\ExampleDir\ExampleUser1'
 <p></p>
 
 ## ADDITIONAL Backup all the stuff
-RSync to backup all the image files:
+RSync to backup all the image files manually:
 ```
 rsync -vr /media/usb4TB/immich/library/ /media/share/immich/library
 ```
+RSync as cron sheduled job to backup all the image files:
+```
+0 1 * * * rsync -vr /media/usb4TB/immich/library/ /media/share/immich/library
+```
 Todo;
--Image database backup
--backup /srv subfolders
+- Image database backup
+- backup /srv subfolders
+<br/>
+<br/>
+<p></p>
 
 ## ADDITIONAL Update all the stuff
 Immich Update procedyre using portainer
