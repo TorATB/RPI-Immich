@@ -620,4 +620,12 @@ immich upload --recursive 'F:\ExampleDir\ExampleUser1'
 ```
 
 
+## ADDITIONAL Backup all the stuff
+RSync to backup all the image files:
+```
+rsync -vr /media/usb4TB/immich/library/ /media/share/immich/library
+```
+Todo;
+-Image database backup
+-backup /srv subfolders
 
