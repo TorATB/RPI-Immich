@@ -621,13 +621,23 @@ immich upload --recursive 'F:\ExampleDir\ExampleUser1'
 <p></p>
 
 ## ADDITIONAL Backup all the stuff
-RSync to backup all the image files manually:
+RSync to backup all the immich image and video files manually
 ```
 rsync -vr /media/usb4TB/immich/library/ /media/share/immich/library
 ```
-RSync as cron sheduled job to backup all the image files:
+RSync to backup the immich
 ```
-0 1 * * * rsync -vr /media/usb4TB/immich/library/ /media/share/immich/library
+sudo rsync -vr /srv/immich_pgdata/ /media/share/immich/immich_pgdata
+```
+RSync as cron sheduled job to backup all the immich image and video files
+```
+sudo nano /etc/crontab
+```
+Paste this at bottom of all the other text, DO NOT DELETE ANYTHING HERE
+Change yourusername
+```
+0  1    * * *   yourusername     rsync -vr /media/usb4TB/immich/library/ /media/share/immich/library
+0  1    * * *   root    rsync -vr /srv/immich_pgdata/ /media/share/immich/immich_pgdata
 ```
 Todo;
 - Image database backup
@@ -635,6 +645,21 @@ Todo;
 <br/>
 <br/>
 <p></p>
+
+## ADDITIONAL Restore immich from backup
+RSync to restore images from your backup
+```
+rsync -vr /media/share/immich/library/ /media/usb4TB/immich/library
+```
+RSync to restore database files from your backup
+```
+sudo rsync -vr /var/lib/docker/volumes/immich_pgdata/ /srv/immich_pgdata
+```
+INFO
+Since my example is on an external harddrive with smbv1.0, i need to take ownership of the restored folder structure
+```
+sudo chown -R yourusername:yourusername /srv/immich_pgdata
+```
 
 ## ADDITIONAL Update all the stuff
 Immich Update procedyre using portainer
