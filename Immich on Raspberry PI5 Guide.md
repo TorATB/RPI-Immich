@@ -346,6 +346,8 @@ tmpfs                       1.6G  112K  1.6G   1% /run/user/1000
 Install Portainer (if you need SUDO here, then your user is missing from docker group.)
 ```
 docker volume create portainer_data
+```
+```
 docker run -d -p 8000:8000 -p 9000:9000 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
 ```
 OPTIONAL<br/>
@@ -354,8 +356,6 @@ If you like to store some data outside containers do this step, now you can stor
 sudo chown -R myusername:myusername /srv
 ```
 <br/>
-<br/>
-<p></p>
 
 ADDITIONAL<br/>
 Updating Portainer to newest version
