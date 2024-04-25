@@ -357,6 +357,27 @@ sudo chown -R myusername:myusername /srv
 <br/>
 <p></p>
 
+ADDITIONAL<br/>
+Updating Portainer to newest version
+```
+sudo apt update && sudo apt upgrade -y
+```
+```
+docker stop portainer
+```
+```
+docker rm portainer
+```
+```
+docker pull portainer/portainer-ce:latest
+```
+```
+docker run -d -p 8000:8000 -p 9000:9000 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
+```
+<br/>
+<br/>
+<p></p>
+
 ## SETUP your external domain, this guide is for no-ip.org since it's free (5 minutes)
 Go to www.no-ip.org
 - Create a new user, or login to your existing one
