@@ -494,7 +494,7 @@ Let's encrypt can issue 5 SSL certificates within the same couple of days, so if
 
 ## INSTALL immich on PORTAINER (10 minutes):
 ADDITIONAL INFO<br/>
-I have added /media/tor/usb4TB/immich/external:/media/tor/usb4TB/immich/external as volumes as I used it for a while, but soon found out that it's a lot better to add bulk pictures and video using CLI command API. I decided to leave the two volume entries in this setup as you might want to use it. I recommend using CLI. (replace tor and usb4TB with your names)
+Library in immich is readonly, you can not change anything. I would recommend using CLI to import your existing photos and videos instead of using library.
 
 Go to Portainer web: 192.168.1.111:9000
 - Click Stacks
@@ -513,7 +513,6 @@ services:
     volumes:
       - ${UPLOAD_LOCATION}:/usr/src/app/upload
       - /etc/localtime:/etc/localtime:ro
-      - /media/tor/usb4TB/immich/external:/media/tor/usb4TB/immich/external
     env_file:
       - stack.env
     ports:
@@ -529,7 +528,6 @@ services:
     volumes:
       - ${UPLOAD_LOCATION}:/usr/src/app/upload
       - /etc/localtime:/etc/localtime:ro
-      - /media/tor/usb4TB/immich/external:/media/tor/usb4TB/immich/external
     env_file:
       - stack.env
     depends_on:
@@ -556,7 +554,7 @@ services:
       POSTGRES_USER: ${DB_USERNAME}
       POSTGRES_DB: ${DB_DATABASE_NAME}
     volumes:
-      - pgdata:/var/lib/postgresql/data
+      - /srv/immich_pgdata:/var/lib/postgresql/data
     restart: always
 volumes:
   pgdata:
