@@ -618,7 +618,9 @@ Upload files to your immich server
 ```
 immich upload --recursive 'F:\ExampleDir\ExampleUser1'
 ```
-
+<br/>
+<br/>
+<p></p>
 
 ## ADDITIONAL Backup all the stuff
 RSync to backup all the image files:
