@@ -631,3 +631,20 @@ Todo;
 -Image database backup
 -backup /srv subfolders
 
+## ADDITIONAL Update all the stuff
+Immich Update procedyre using portainer
+If you dont have the config saved somewere, first copy the text and paste it in notepad or somewhere else for easy copy back
+- Click "Stacks"
+- Click "immich"
+- Click "Editor"
+- Copy config text and variables as text in advanced view to notepad or something else
+- Click "Stack"
+- Click "Stop this stack"
+- Click "Delete this stack"
+- Click "Images"
+- Select all images that have yellow label inactive
+- Click "Remove"
+- Click "Stacks"
+- Click "Add stack"
+- Fill inn like you do in normal immich install, now it will pull the newest version
+
