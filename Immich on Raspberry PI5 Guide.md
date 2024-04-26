@@ -649,7 +649,7 @@ Change yourusername
 ```
 0   1    * * *   root    rsync -vr /srv/immich_pgdata/ /media/share/immich/immich_pgdata
 0   1    * * *   root    rsync -vr /srv/letsencrypt/ /media/share/nginx-proxy-manager/letsencrypt
-0   1    * * *   root    sudo rsync -vr /srv/nginx-proxy-manager/ /media/share/nginx-proxy-manager/data
+0   1    * * *   root    rsync -vr /srv/nginx-proxy-manager/ /media/share/nginx-proxy-manager/data
 10  1    * * *   yourusername     rsync -vr /media/usb4TB/immich/library/ /media/share/immich/library
 ```
 <br/>
