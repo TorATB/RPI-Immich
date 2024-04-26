@@ -621,27 +621,37 @@ immich upload --recursive 'F:\ExampleDir\ExampleUser1'
 <p></p>
 
 ## ADDITIONAL Backup all the stuff
-RSync to backup all the immich image and video files manually
+Manual backup
+Backup all the immich image and video files
 ```
 rsync -vr /media/usb4TB/immich/library/ /media/share/immich/library
 ```
-RSync to backup the immich
+Backup the immich database
 ```
 sudo rsync -vr /srv/immich_pgdata/ /media/share/immich/immich_pgdata
 ```
-RSync as cron sheduled job to backup all the immich image and video files
+Backup nginx certificates
+```
+sudo rsync -vr /srv/letsencrypt/ /media/share/nginx-proxy-manager/letsencrypt
+```
+Backup nginx data
+```
+sudo rsync -vr /srv/nginx-proxy-manager/ /media/share/nginx-proxy-manager/data
+```
+<br/>
+
+RSync as cron sheduled job to backup all the immich image and video files and dababase
 ```
 sudo nano /etc/crontab
 ```
 Paste this at bottom of all the other text, DO NOT DELETE ANYTHING HERE
 Change yourusername
 ```
-0  1    * * *   yourusername     rsync -vr /media/usb4TB/immich/library/ /media/share/immich/library
-0  1    * * *   root    rsync -vr /srv/immich_pgdata/ /media/share/immich/immich_pgdata
+0   1    * * *   root    rsync -vr /srv/immich_pgdata/ /media/share/immich/immich_pgdata
+0   1    * * *   root    rsync -vr /srv/letsencrypt/ /media/share/nginx-proxy-manager/letsencrypt
+0   1    * * *   root    sudo rsync -vr /srv/nginx-proxy-manager/ /media/share/nginx-proxy-manager/data
+10  1    * * *   yourusername     rsync -vr /media/usb4TB/immich/library/ /media/share/immich/library
 ```
-Todo;
-- Image database backup
-- backup /srv subfolders
 <br/>
 <br/>
 <p></p>
