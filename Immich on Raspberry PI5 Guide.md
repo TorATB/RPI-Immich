@@ -9,8 +9,8 @@ After much pain and suffering I decided to go for a different hardware solution.
 <br/>
 <br/>
 You can use the same guide for Debian installation
-
-
+<br/>
+<br/>
 If you still want to try setting up Raspberry PI5, I used the following:
 - Raspberry Pi 5
 - Official Raspberry PI 5 power adapter (or the one with the PI Hat)
