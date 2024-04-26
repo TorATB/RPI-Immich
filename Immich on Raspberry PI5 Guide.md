@@ -665,11 +665,14 @@ RSync to restore database files from your backup
 ```
 sudo rsync -vr /var/lib/docker/volumes/immich_pgdata/ /srv/immich_pgdata
 ```
-INFO
+INFO<br/>
 Since my example is on an external harddrive with smbv1.0, i need to take ownership of the restored folder structure
 ```
 sudo chown -R yourusername:yourusername /srv/immich_pgdata
 ```
+<br/>
+<br/>
+<p></p>
 
 ## ADDITIONAL Update all the stuff
 Immich Update procedyre using portainer
