@@ -689,7 +689,7 @@ If you dont have the config saved somewere, first copy the text and paste it in 
 - Click "Stop this stack"
 - Click "Delete this stack"
 - Click "Images"
-- Select all images that have yellow label inactive
+- Select all images that have yellow label "Inactive"
 - Click "Remove"
 - Click "Stacks"
 - Click "Add stack"
