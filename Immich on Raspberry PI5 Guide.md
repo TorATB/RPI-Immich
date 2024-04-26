@@ -4,10 +4,14 @@
 
 ## Initial information
 
-My hardware are as following:
+First I would like to warn you about that fact that my Raspberry PI5 was massively unstable in this setup. I tried multiple configurations all with the official power supply 5v 5a.
+After much pain and suffering I decided to go for a different hardware solution. I went for a slightly bigger box, still the smalles box with integrated 3.5" HDD and m.2 disk support.
+"ASUS VivoMini VM65N - i5-7th 2.5GHz - 16GB RAM"
+
+
+If you still want to try setting up Raspberry PI5, I used the following:
 - Raspberry Pi 5
 - Official Raspberry PI 5 power adapter (or the one with the PI Hat)
-Important with 5V AND 5A or else your system will be unstable!
 - [PI Hat for M.2 SSD](https://www.aliexpress.com/item/1005006383425420.html?spm=a2g0o.order_detail.order_detail_item.3.25086d76ShtfSJ)
 - [PI Case designed for PI Hat](https://www.aliexpress.com/item/1005006383425420.html?spm=a2g0o.order_detail.order_detail_item.5.25086d76ShtfSJ)
 - M.2 disk
