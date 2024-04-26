@@ -7,6 +7,7 @@
 First I would like to warn you about that fact that my Raspberry PI5 was massively unstable in this setup. I tried multiple configurations all with the official power supply 5v 5a.
 After much pain and suffering I decided to go for a different hardware solution. I went for a slightly bigger box, still the smalles box with integrated 3.5" HDD and m.2 disk support.
 "ASUS VivoMini VM65N - i5-7th 2.5GHz - 16GB RAM"
+You can use the same guide for Debian installation
 
 
 If you still want to try setting up Raspberry PI5, I used the following:
