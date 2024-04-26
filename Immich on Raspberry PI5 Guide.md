@@ -621,7 +621,7 @@ immich upload --recursive 'F:\ExampleDir\ExampleUser1'
 <p></p>
 
 ## ADDITIONAL Backup all the stuff
-Manual backup
+Manual backup<br/>
 Backup all the immich image and video files
 ```
 rsync -vr /media/usb4TB/immich/library/ /media/share/immich/library
