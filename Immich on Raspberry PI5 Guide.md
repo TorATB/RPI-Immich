@@ -696,3 +696,28 @@ If you dont have the config saved somewere, first copy the text and paste it in 
 - Click "Add stack"
 - Fill inn like you do in normal immich install, now it will pull the newest version
 
+<br/>
+<br/>
+<p></p>
+
+## Install Pre-req and immich-CLI
+How to install and use immich-cli in powershell
+- Download and install Node JS https://nodejs.org/en/download
+- Install NPM in Powershell (As Administrator)
+```
+npm install -g npm@10.7.0
+```
+- Install immich-cli
+```
+npm i -g @immich/cli
+```
+- Find your API-key, log in to webpage, click profile picture top right corner, Account Settings, API Keys, new key, copy the new key
+- Login using your API-key
+```
+immich login http://192.168.1.111:2283/api FDSrewgArtqrwefASDFewrdFASDfweqrRSDFAFewrEXAMPLE
+```
+- Upload using this command for best results
+```
+immich upload --include-hidden --recursive 'E:\Example Folder'
+```
+
