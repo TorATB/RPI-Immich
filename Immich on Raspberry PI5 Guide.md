@@ -679,7 +679,7 @@ sudo chown -R yourusername:yourusername /srv/immich_pgdata
 <br/>
 <p></p>
 
-## ADDITIONAL Update all the stuff
+## ADDITIONAL Update all the stuff, manual
 Immich Update procedyre using portainer
 If you dont have the config saved somewere, first copy the text and paste it in notepad or somewhere else for easy copy back
 - Click "Stacks"
@@ -690,11 +690,23 @@ If you dont have the config saved somewere, first copy the text and paste it in 
 - Click "Stop this stack"
 - Click "Delete this stack"
 - Click "Images"
-- Select all images that have yellow label "Inactive"
+- Select all images that have yellow label "Unused"
 - Click "Remove"
 - Click "Stacks"
 - Click "Add stack"
 - Fill inn like you do in normal immich install, now it will pull the newest version
+
+## ADDITIONAL Update all the stuff, script
+I have not tried this yet. I will try it at next update.
+```
+arrImmich=$( docker ps --filter "name=immich" -q )
+docker stop $arrImmich
+docker rmi $(docker images ghcr.io/immich-app/immich-server:release -q)
+docker rmi $(docker images ghcr.io/immich-app/immich-machine-learning:release -q)
+docker rmi $(docker images registry.hub.docker.com/tensorchord/pgvecto-rs -q)
+docker rmi $(docker images registry.hub.docker.com/library/redis -q)
+docker start $arrImmich
+```
 
 <br/>
 <br/>
