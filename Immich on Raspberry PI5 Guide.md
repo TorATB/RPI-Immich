@@ -668,7 +668,8 @@ rsync -vr /media/share/immich/library/ /media/usb4TB/immich/library
 ```
 RSync to restore database files from your backup
 ```
-sudo rsync -vr /var/lib/docker/volumes/immich_pgdata/ /srv/immich_pgdata
+sudo rm -r /media/share/immich/immich_pgdata/
+sudo rsync -vr /media/share/immich/immich_pgdata/ /srv/immich_pgdata
 ```
 INFO<br/>
 Since my example is on an external harddrive with smbv1.0, i need to take ownership of the restored folder structure
