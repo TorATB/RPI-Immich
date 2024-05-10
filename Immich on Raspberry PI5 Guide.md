@@ -669,6 +669,7 @@ rsync -vr /media/share/immich/library/ /media/usb4TB/immich/library
 RSync to restore database files from your backup
 ```
 sudo rm -R /srv/immich_pgdata
+mkdir immich_pgdata
 sudo rsync -vr /media/share/immich/immich_pgdata/ /srv/immich_pgdata
 ```
 INFO<br/>
