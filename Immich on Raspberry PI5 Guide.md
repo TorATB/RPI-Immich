@@ -652,10 +652,18 @@ sudo nano /etc/crontab
 Paste this at bottom of all the other text, DO NOT DELETE ANYTHING HERE
 Change yourusername
 ```
+#
+#Backuplocation 1
 0   1    * * *   root    rsync -vr /srv/immich_pgdata/ /media/share/immich/immich_pgdata
 0   1    * * *   root    rsync -vr /srv/letsencrypt/ /media/share/nginx-proxy-manager/letsencrypt
 0   1    * * *   root    rsync -vr /srv/nginx-proxy-manager/ /media/share/nginx-proxy-manager/data
 10  1    * * *   yourusername     rsync -vr /media/usb4TB/immich/library/ /media/share/immich/library
+#
+#Backuplocation 2
+30 rsync -vr /srv/letsencrypt/ /media/share2/nginx-proxy-manager/letsencrypt
+30 rsync -vr /srv/nginx-proxy-manager/ /media/share2/nginx-proxy-manager/data
+30 rsync -vr /srv/immich_pgdata/ /media/share2/immich/immich_pgdata
+40  1    * * *   yourusername rsync -vr /media/usb4TB/immich/library/ /media/share2/immich/library
 ```
 <br/>
 <br/>
