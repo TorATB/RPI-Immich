@@ -629,19 +629,19 @@ immich upload --recursive 'F:\ExampleDir\ExampleUser1'
 Manual backup<br/>
 Backup all the immich image and video files
 ```
-rsync -vr /media/usb4TB/immich/library/ /media/share/immich/library
+rsync -av /media/usb4TB/immich/library/ /media/share/immich/library
 ```
 Backup the immich database
 ```
-sudo rsync -vr /srv/immich_pgdata/ /media/share/immich/immich_pgdata
+sudo rsync -av /srv/immich_pgdata/ /media/share/immich/immich_pgdata
 ```
 Backup nginx certificates
 ```
-sudo rsync -vr /srv/letsencrypt/ /media/share/nginx-proxy-manager/letsencrypt
+sudo rsync -av /srv/letsencrypt/ /media/share/nginx-proxy-manager/letsencrypt
 ```
 Backup nginx data
 ```
-sudo rsync -vr /srv/nginx-proxy-manager/ /media/share/nginx-proxy-manager/data
+sudo rsync -av /srv/nginx-proxy-manager/ /media/share/nginx-proxy-manager/data
 ```
 <br/>
 
@@ -654,16 +654,16 @@ Change yourusername
 ```
 #
 #Backuplocation 1
-0   1    * * *   root    rsync -vr /srv/immich_pgdata/ /media/share/immich/immich_pgdata
-0   1    * * *   root    rsync -vr /srv/letsencrypt/ /media/share/nginx-proxy-manager/letsencrypt
-0   1    * * *   root    rsync -vr /srv/nginx-proxy-manager/ /media/share/nginx-proxy-manager/data
-10  1    * * *   yourusername     rsync -vr /media/usb4TB/immich/library/ /media/share/immich/library
+0   1    * * *   root    rsync -av /srv/immich_pgdata/ /media/share/immich/immich_pgdata
+0   1    * * *   root    rsync -av /srv/letsencrypt/ /media/share/nginx-proxy-manager/letsencrypt
+0   1    * * *   root    rsync -av /srv/nginx-proxy-manager/ /media/share/nginx-proxy-manager/data
+10  1    * * *   yourusername     rsync -av /media/usb4TB/immich/library/ /media/share/immich/library
 #
 #Backuplocation 2
-30 rsync -vr /srv/letsencrypt/ /media/share2/nginx-proxy-manager/letsencrypt
-30 rsync -vr /srv/nginx-proxy-manager/ /media/share2/nginx-proxy-manager/data
-30 rsync -vr /srv/immich_pgdata/ /media/share2/immich/immich_pgdata
-40  1    * * *   yourusername rsync -vr /media/usb4TB/immich/library/ /media/share2/immich/library
+30 rsync -av /srv/letsencrypt/ /media/share2/nginx-proxy-manager/letsencrypt
+30 rsync -av /srv/nginx-proxy-manager/ /media/share2/nginx-proxy-manager/data
+30 rsync -av /srv/immich_pgdata/ /media/share2/immich/immich_pgdata
+40  1    * * *   yourusername rsync -av /media/usb4TB/immich/library/ /media/share2/immich/library
 ```
 <br/>
 <br/>
@@ -672,13 +672,13 @@ Change yourusername
 ## ADDITIONAL Restore immich from backup
 RSync to restore images from your backup
 ```
-rsync -vr /media/share/immich/library/ /media/usb4TB/immich/library
+rsync -av /media/share/immich/library/ /media/usb4TB/immich/library
 ```
 RSync to restore database files from your backup
 ```
 sudo rm -R /srv/immich_pgdata
 mkdir immich_pgdata
-sudo rsync -vr /media/share/immich/immich_pgdata/ /srv/immich_pgdata
+sudo rsync -av /media/share/immich/immich_pgdata/ /srv/immich_pgdata
 ```
 INFO<br/>
 Since my example is on an external harddrive with smbv1.0, i need to take ownership of the restored folder structure
