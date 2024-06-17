@@ -653,17 +653,17 @@ Paste this at bottom of all the other text, DO NOT DELETE ANYTHING HERE
 Change yourusername
 ```
 #
-#Backuplocation 1
-0   1    * * *   root    rsync -av /srv/immich_pgdata/ /media/share/immich/immich_pgdata
+#Backuplocation 1 - SMB 3.0
 0   1    * * *   root    rsync -av /srv/letsencrypt/ /media/share/nginx-proxy-manager/letsencrypt
 0   1    * * *   root    rsync -av /srv/nginx-proxy-manager/ /media/share/nginx-proxy-manager/data
-10  1    * * *   yourusername     rsync -av /media/usb4TB/immich/library/ /media/share/immich/library
+0   1    * * *   root    rsync -av /srv/immich_pgdata/ /media/share/immich/immich_pgdata
+10  1    * * *   yourusername rsync -av --progress /media/usb4TB/immich/library/ /media/share/immich/library
 #
-#Backuplocation 2
-30 rsync -av /srv/letsencrypt/ /media/share2/nginx-proxy-manager/letsencrypt
-30 rsync -av /srv/nginx-proxy-manager/ /media/share2/nginx-proxy-manager/data
-30 rsync -av /srv/immich_pgdata/ /media/share2/immich/immich_pgdata
-40  1    * * *   yourusername rsync -av /media/usb4TB/immich/library/ /media/share2/immich/library
+#Backuplocation 2 - SMB 1.0
+30   1    * * *   root    rsync -rv /srv/letsencrypt/ /media/share2/nginx-proxy-manager/letsencrypt
+30   1    * * *   root    rsync -rv /srv/nginx-proxy-manager/ /media/share2/nginx-proxy-manager/data
+30   1    * * *   root    rsync -rv /srv/immich_pgdata/ /media/share2/immich/immich_pgdata
+40   1    * * *   yourusername rsync -rv --ignore-existing --progress /media/usb4TB/immich/library/ /media/share2/immich/library
 ```
 <br/>
 <br/>
