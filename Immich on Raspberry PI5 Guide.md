@@ -30,6 +30,13 @@ Assemble your PI5 withut the case (you probably need a few tries, so don't use t
 Plug your Micro SD card in a PC/MAC, download the Raspberry PI5 image and create an installation media using "Raspberry PI5 imager".
 Insert the SD card, do not insert the M.2 disk.
 
+YOUR_USERNAME is not in the sudoers file.
+```
+su -
+usermod -aG sudo YOUR_USERNAME
+exit
+```
+
 You can start with updating the system
 ```
 sudo apt update && sudo apt upgrade -y
