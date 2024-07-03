@@ -263,7 +263,7 @@ password=smb_password
 ```
 Restrict access to the credentials file
 ```
-chmod 400 /root/.smbcredentials
+sudo chmod 400 /root/.smbcredentials
 ```
 Mount the share
 INFO: Here it's specified version 3.0, if you have an older system 1.0 might be used
