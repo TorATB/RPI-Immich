@@ -519,15 +519,15 @@ Go to Portainer web: 192.168.1.111:9000
 - Click "Add Stack"
 - Fill in name "immich"
 - Make sure "Web Editor" is selected
-- Fill in CODE BELOW:
+- Fill in CODE BELOW: (Yml, tested with immich v1.107.2)
 
 ```
 name: immich
+
 services:
   immich-server:
     container_name: immich_server
     image: ghcr.io/immich-app/immich-server:${IMMICH_VERSION:-release}
-    command: ['start.sh', 'immich']
     volumes:
       - ${UPLOAD_LOCATION}:/usr/src/app/upload
       - /etc/localtime:/etc/localtime:ro
@@ -539,19 +539,7 @@ services:
       - redis
       - database
     restart: always
-  immich-microservices:
-    container_name: immich_microservices
-    image: ghcr.io/immich-app/immich-server:${IMMICH_VERSION:-release}
-    command: ['start.sh', 'microservices']
-    volumes:
-      - ${UPLOAD_LOCATION}:/usr/src/app/upload
-      - /etc/localtime:/etc/localtime:ro
-    env_file:
-      - stack.env
-    depends_on:
-      - redis
-      - database
-    restart: always
+
   immich-machine-learning:
     container_name: immich_machine_learning
     image: ghcr.io/immich-app/immich-machine-learning:${IMMICH_VERSION:-release}
@@ -560,34 +548,44 @@ services:
     env_file:
       - stack.env
     restart: always
+
   redis:
     container_name: immich_redis
-    image: registry.hub.docker.com/library/redis:6.2-alpine@sha256:51d6c56749a4243096327e3fb964a48ed92254357108449cb6e23999c37773c5
+    image: docker.io/redis:6.2-alpine@sha256:d6c2911ac51b289db208767581a5d154544f2b2fe4914ea5056443f62dc6e900
+    healthcheck:
+      test: redis-cli ping || exit 1
     restart: always
+
   database:
     container_name: immich_postgres
-    image: registry.hub.docker.com/tensorchord/pgvecto-rs:pg14-v0.2.0@sha256:90724186f0a3517cf6914295b5ab410db9ce23190a2d9d0b9dd6463e3fa298f0
+    image: docker.io/tensorchord/pgvecto-rs:pg14-v0.2.0@sha256:90724186f0a3517cf6914295b5ab410db9ce23190a2d9d0b9dd6463e3fa298f0
     environment:
       POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_USER: ${DB_USERNAME}
       POSTGRES_DB: ${DB_DATABASE_NAME}
+      POSTGRES_INITDB_ARGS: '--data-checksums'
     volumes:
-      - /srv/immich_pgdata:/var/lib/postgresql/data
+      - ${DB_DATA_LOCATION}:/var/lib/postgresql/data
+    healthcheck:
+      test: pg_isready --dbname='${DB_DATABASE_NAME}' || exit 1; Chksum="$$(psql --dbname='${DB_DATABASE_NAME}' --username='${DB_USERNAME}' --tuples-only --no-align --command='SELECT COALESCE(SUM(checksum_failures), 0) FROM pg_stat_database')"; echo "checksum failure count is $$Chksum"; [ "$$Chksum" = '0' ] || exit 1
+      interval: 5m
+      start_interval: 30s
+      start_period: 5m
+    command: ["postgres", "-c" ,"shared_preload_libraries=vectors.so", "-c", 'search_path="$$user", public, vectors', "-c", "logging_collector=on", "-c", "max_wal_size=2GB", "-c", "shared_buffers=512MB", "-c", "wal_compression=on"]
     restart: always
+
 volumes:
-  pgdata:
   model-cache:
 ```
 - Click "Advanced mode"
 - Fill in CODE BELOW: (replace tor and usb4TB with your names, also set a new password)
 ```
-UPLOAD_LOCATION=/media/tor/usb4TB/immich
-DB_PASSWORD=changeme
+UPLOAD_LOCATION=/media/usb4TB/immich
+DB_DATA_LOCATION=/media/usb4TB/immich/immich_pgdata
+DB_PASSWORD=SetNewPasswordHere
 IMMICH_VERSION=release
-DB_HOSTNAME=immich_postgres
 DB_USERNAME=postgres
 DB_DATABASE_NAME=immich
-REDIS_HOSTNAME=immich_redis
 ```
 - Click "Simple mode" (to switch back, optional)
 - Click "Deploy the stack"
