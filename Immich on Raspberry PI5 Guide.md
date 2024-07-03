@@ -468,7 +468,7 @@ services:
       - '81:81'
       - '443:443'
     volumes:
-      - /media/usb4TB/nginx-proxy-manager/data:/data
+      - /srv/data:/data
       - /media/usb4TB/nginx-proxy-manager/letsencrypt:/etc/letsencrypt
 ```
 - Click "Deploy the stack"
