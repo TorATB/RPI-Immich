@@ -287,6 +287,10 @@ Paste the following to run the rsync job every night at 01:00
 ```
 0 1 * * *  rsync -vr /media/usb4TB/immich/ /media/share/immich
 ```
+Install rsync if it's missing
+```
+sudo apt-get install rsync
+```
 
 <br/>
 <br/>
