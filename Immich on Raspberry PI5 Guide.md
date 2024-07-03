@@ -473,10 +473,52 @@ services:
 ```
 - Click "Deploy the stack"
 
+<br/>
+<br/>
+<p></p>
+
 ADDITIONAL INFO<br/>
 Since we use /srv in volumes, this means that if you, at a later time, remove the stack and the volumes, the data will persist since its stored outside docker at location /srv
 
 <hr>
+
+## INSTALL nginex-webdav on Portainer (10 minutes)
+
+- Click Stacks
+- Click "Add Stack"
+- Fill in name "nginx-webdav"
+- Make sure "Web Editor" is selected
+- Fill in CODE BELOW:
+```
+version: '3'
+services:
+  webdav:
+    image: dgraziotin/nginx-webdav-nononsense:latest
+    restart: unless-stopped
+    ports:
+    - 8080:80
+    environment:
+      WEBDAV_USERNAME: ${USERNAME}
+      WEBDAV_PASSWORD: ${PASSWORD}
+      PUID: 1000
+      PGID: 1000
+      CLIENT_MAX_BODY_SIZE: 10G # must end with M(egabytes) or G(igabytes)
+      TIMEOUTS_S: 1200 # these are seconds
+    volumes:
+      - /media/usb4TB/webdav:/data
+```
+
+Environment Varibales
+- Advanced mode
+- Fill in
+
+```
+USERNAME=YOUR_USERNAME
+PASSWORD=YOUR_PASSOWRD
+```
+
+- Click "Deploy the stack"
+
 
 ### Go to Nginx Proxy Manager web: 192.168.1.111:81
 
