@@ -296,6 +296,7 @@ Paste the following to run the rsync job every night at 01:00
 
 ```
 sudo apt update && sudo apt upgrade -y
+sudo apt install curl -y
 curl -sSL https://get.docker.com | sh
 ```
 Add user to docker group (replace yourusername)
