@@ -490,22 +490,24 @@ Since we use /srv in volumes, this means that if you, at a later time, remove th
 - Make sure "Web Editor" is selected
 - Fill in CODE BELOW:
 ```
-version: '3'
+version: '3.3'
 services:
-  webdav:
+  nginxwebdav:
+    container_name: nginxwebdav
     image: dgraziotin/nginx-webdav-nononsense:latest
-    restart: unless-stopped
-    ports:
-    - 8080:80
-    environment:
-      WEBDAV_USERNAME: ${USERNAME}
-      WEBDAV_PASSWORD: ${PASSWORD}
-      PUID: 1000
-      PGID: 1000
-      CLIENT_MAX_BODY_SIZE: 10G # must end with M(egabytes) or G(igabytes)
-      TIMEOUTS_S: 1200 # these are seconds
     volumes:
       - /media/usb4TB/webdav:/data
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Oslo
+      - WEBDAV_USERNAME=${USERNAME}
+      - WEBDAV_PASSWORD=${PASSWORD}
+      - SERVER_NAMES=localhost
+      - TIMEOUTS_S=1200
+      - CLIENT_MAX_BODY_SIZE=10G
+    ports:
+      - 8080:80
 ```
 
 Environment Varibales
