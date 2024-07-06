@@ -712,13 +712,13 @@ Change yourusername
 0   1    * * *   root    rsync -av /srv/letsencrypt/ /media/share/nginx-proxy-manager/letsencrypt
 0   1    * * *   root    rsync -av /srv/nginx-proxy-manager/ /media/share/nginx-proxy-manager/data
 0   1    * * *   root    rsync -av /srv/immich_pgdata/ /media/share/immich/immich_pgdata
-10  1    * * *   yourusername rsync -av --progress /media/usb4TB/immich/library/ /media/share/immich/library
+10  1    * * *   root    rsync -av --progress /media/usb4TB/immich/library/ /media/share/immich/library
 #
 #Backuplocation 2 - SMB 1.0
 30   1    * * *   root    rsync -rv /srv/letsencrypt/ /media/share2/nginx-proxy-manager/letsencrypt
 30   1    * * *   root    rsync -rv /srv/nginx-proxy-manager/ /media/share2/nginx-proxy-manager/data
 30   1    * * *   root    rsync -rv /srv/immich_pgdata/ /media/share2/immich/immich_pgdata
-40   1    * * *   yourusername rsync -rv --ignore-existing --progress /media/usb4TB/immich/library/ /media/share2/immich/library
+40   1    * * *   root    rsync -rv --ignore-existing --progress /media/usb4TB/immich/library/ /media/share2/immich/library
 ```
 <br/>
 <br/>
