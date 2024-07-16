@@ -761,16 +761,34 @@ If you dont have the config saved somewere, first copy the text and paste it in 
 - Click "Add stack"
 - Fill inn like you do in normal immich install, now it will pull the newest version
 
-## ADDITIONAL Update all the stuff, script
-I have not tried this yet. I will try it at next update.
+## ADDITIONAL Update all the stuff, using watchtower
+I have tried this for a few updates
+
+- Click "Stacks"
+- Click "watchtower"
+- Click "Editor"
+- Copy config text and variables as text in advanced view to notepad or something else
 ```
-arrImmich=$( docker ps --filter "name=immich" -q )
-docker stop $arrImmich
-docker rmi $(docker images ghcr.io/immich-app/immich-server:release -q)
-docker rmi $(docker images ghcr.io/immich-app/immich-machine-learning:release -q)
-docker rmi $(docker images registry.hub.docker.com/tensorchord/pgvecto-rs -q)
-docker rmi $(docker images registry.hub.docker.com/library/redis -q)
-docker start $arrImmich
+services:
+  watchtower:
+    image: containrrr/watchtower:latest
+    container_name: watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      TZ: 'Europe/Oslo'
+      WATCHTOWER_CLEANUP: 'false'
+      WATCHTOWER_INCLUDE_STOPPED: 'true'
+      WATCHTOWER_INCLUDE_RESTARTING: 'true'
+      WATCHTOWER_SCHEDULE: 0 0 3 * * *
+      WATCHTOWER_TIMEOUT: '30s'
+    healthcheck:
+      test: ["CMD", "/watchtower", "--health-check"]
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    restart: unless-stopped
 ```
 
 <br/>
