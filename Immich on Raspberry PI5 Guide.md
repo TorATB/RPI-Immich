@@ -508,6 +508,7 @@ services:
       - CLIENT_MAX_BODY_SIZE=10G
     ports:
       - 8080:80
+    restart: unless-stopped
 ```
 
 Environment Varibales
