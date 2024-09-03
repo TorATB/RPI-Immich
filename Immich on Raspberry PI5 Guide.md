@@ -482,6 +482,38 @@ Since we use /srv in volumes, this means that if you, at a later time, remove th
 
 <hr>
 
+### Go to Nginx Proxy Manager web: 192.168.1.111:81
+
+Default username:
+```
+admin@example.com
+```
+Default password:
+```
+changeme
+```
+- Click "Hosts"
+- Click "Proxy Hosts"
+- Click "Add proxy host"
+- Fill in Domain Names EXAMPLE "myfreedomainname.no-ip.org"
+- Fill in Forward Hostname/IP EXAMPLE "192.168.1.111"
+- Fill in Forward Port "2283"
+- Enable "Websockets Support"
+- Click "Save"
+- Click "..."
+- Click "Edit"
+- Click "SSL"
+- Change "None" to "Request Certificate"
+- Enable "Force SSL"
+- Enable "HTTP/2 Support"
+- Click "Save"
+
+ADDITIONAL INFO<br/>
+Let's encrypt can issue 5 SSL certificates within the same couple of days, so if you are testing and need to reset your whole box and re-issue for certificates, you have 5 tries for that domain.
+<br/>
+<br/>
+<p></p>
+
 ## INSTALL nginex-webdav on Portainer (10 minutes)
 
 - Click Stacks
@@ -522,38 +554,6 @@ PASSWORD=YOUR_PASSOWRD
 
 - Click "Deploy the stack"
 
-
-### Go to Nginx Proxy Manager web: 192.168.1.111:81
-
-Default username:
-```
-admin@example.com
-```
-Default password:
-```
-changeme
-```
-- Click "Hosts"
-- Click "Proxy Hosts"
-- Click "Add proxy host"
-- Fill in Domain Names EXAMPLE "myfreedomainname.no-ip.org"
-- Fill in Forward Hostname/IP EXAMPLE "192.168.1.111"
-- Fill in Forward Port "2283"
-- Enable "Websockets Support"
-- Click "Save"
-- Click "..."
-- Click "Edit"
-- Click "SSL"
-- Change "None" to "Request Certificate"
-- Enable "Force SSL"
-- Enable "HTTP/2 Support"
-- Click "Save"
-
-ADDITIONAL INFO<br/>
-Let's encrypt can issue 5 SSL certificates within the same couple of days, so if you are testing and need to reset your whole box and re-issue for certificates, you have 5 tries for that domain.
-<br/>
-<br/>
-<p></p>
 
 ## INSTALL immich on PORTAINER (10 minutes):
 ADDITIONAL INFO<br/>
