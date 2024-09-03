@@ -714,6 +714,7 @@ Change yourusername
 0   1    * * *   root    rsync -av /srv/nginx-proxy-manager/data/ /media/share/nginx-proxy-manager/data
 0   1    * * *   root    rsync -av /srv/immich/immich_pgdata/ /media/share/immich/immich_pgdata
 0   1    * * *   root    rsync -av /srv/webdav/ /media/share/webdav
+0   1    * * *   root    mkdir -p /media/shre/immich/library/
 10  1    * * *   root    rsync -av --progress /media/usb4TB/immich/library/ /media/share/immich/library
 #
 #Backuplocation 2 - SMB 1.0
