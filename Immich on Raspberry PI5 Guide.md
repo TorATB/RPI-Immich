@@ -554,6 +554,24 @@ PASSWORD=YOUR_PASSOWRD
 
 - Click "Deploy the stack"
 
+Fill inn Nginx Proxy Manager info:
+-Log in to Nginx-PM http://192.168.1.111:81/
+-Click Hosts
+-Click Proxy Hosts
+-Click Add Proxy Host
+-Type in dav.mydomannamehere.com and click the text with your mouse.
+-Fill inn IP 192.168.1.111 and port 8080
+-Click Save
+ADDITIONAL: If you want HTTPS support:
+-Click the hamburger-menu (Three dots) next to your freshly added host
+-Click Edit
+-Click SSL - tab
+-In the drop down-box SSL Certificate: choose "Reqest a new SSL Certificate"
+-Enable "Force SSL"
+-Enable "HTTP/2Support"
+-Enable "Agree to terms.."
+-Click Save
+
 
 ## INSTALL immich on PORTAINER (10 minutes):
 ADDITIONAL INFO<br/>
