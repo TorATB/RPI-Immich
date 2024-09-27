@@ -278,6 +278,8 @@ Add this line at the end of your file (v1.0 AND v3.0 example)
 ```
 //192.168.1.110/Share /media/share cifs vers=3.0,credentials=/root/.smbcredentials,_netdev,x-systemd.automount 0 0
 //192.168.1.111/USB3/sda2 /media/share2 cifs vers=1.0,credentials=/root/.smbcredentials,_netdev,noauto,x-systemd.automount 0 0
+#Alternatively
+//192.168.1.112/Share /media/share3 cifs credentials=/root/.smbcredentials,auto,nofail,_netdev 0 0
 ```
 Create Scheduled task for backup every night
 ```
