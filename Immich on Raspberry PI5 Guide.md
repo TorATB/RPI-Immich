@@ -554,6 +554,10 @@ PASSWORD=YOUR_PASSOWRD
 
 - Click "Deploy the stack"
 
+```
+sudo chown [username]:[username] /media/usb4TB/webdav
+```
+
 Fill inn Nginx Proxy Manager info:
 -Log in to Nginx-PM http://192.168.1.111:81/
 -Click Hosts
