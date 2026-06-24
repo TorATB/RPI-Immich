@@ -677,8 +677,16 @@ Setup External Library in the GUI, you need both docker-compose.yml (pasted code
 
 OPTIONAL<br/>
 Installing immich-cli in Powershell:
-- Install [Node.JS bundled with NPM](https://nodejs.org/en/download), download and run the setup.
+- Install [Node.JS bundled with NPM](https://nodejs.org/en/download), download and run the setup. IMPORTANT: select the "install tools for native modules" in the installer!
+- Verify that npm is installed correctly
+
+```
+npm --version
+```
+Should return a version number.
+
 - Install the new @immich-cli in powershell
+
 ```
 npm i -g @immich/cli
 ```
@@ -689,6 +697,8 @@ Go to Immich web: 192.168.1.111:2283
 - Click "Your User Icon" (Top right corner)
 - Click "Account Settings"
 - Click "API Keys"
+- Click New API Key
+- Select all
 - Click "Create Key"
 - Copy the key
 - Click "Done"
@@ -699,7 +709,7 @@ immich login https://192.168.1.111/api YourApiKeyHere
 ```
 Upload files to your immich server
 ```
-immich upload --recursive 'F:\ExampleDir\ExampleUser1'
+immich upload --include-hidden --recursive 'F:\ExampleDir\ExampleUser1'
 ```
 <br/>
 <br/>
